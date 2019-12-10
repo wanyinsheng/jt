@@ -1,0 +1,17 @@
+server:
+  port: 8092    
+spring:     #定义springmvc视图解析器
+  mvc:    view:      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+#Springboot整合dubbo  
+dubbo:
+  scan:
+    basePackages: com.jt #包扫描dubbo的service注解
+  application:
+    name: consumer-jt-web  #消费者名称
+  registry:              #链接zookeeper
+    address: zookeeper://192.168.30.128:2181?backup=192.168.30.128:2182,192.168.30.128:2183
+  
+
+  
